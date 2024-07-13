@@ -17,3 +17,7 @@ body, html {
     background: white;
     color: black;
 }
+
+article {
+    display: inline-flex;
+}

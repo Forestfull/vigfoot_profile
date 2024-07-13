@@ -1,6 +1,12 @@
-#main-header {
+#main-header, #main-footer {
     margin: 0;
     padding: 10px;
     display: flex;
     filter: invert(1);
+}
+
+#main-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
