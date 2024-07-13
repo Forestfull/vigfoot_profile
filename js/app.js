@@ -1,0 +1,1 @@
+typingText('#main-header', 'is header');
