@@ -1,4 +1,4 @@
-function typingText(queryString, text) {
+function typeTextIntoNode(queryString, text) {
     let i = 0, timeout = 50;
     const nodes = document.querySelectorAll(queryString);
     const fnTypingChar = char => setTimeout(() => {
