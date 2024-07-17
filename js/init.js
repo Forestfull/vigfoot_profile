@@ -3,10 +3,10 @@ const intervalTimeout = 50;
 
 function text(queryString, text) {
     let i = 0;
-    const nodes = document.querySelectorAll(queryString);
+    const nodes = typeof queryString === 'object' ? [queryString] : document.querySelectorAll(queryString);
     const fnTypingChar = (char, address) => setTimeout(() => {
         nodes.forEach(node => {
-            if (node.querySelectorAll(queryString).length > 0)
+            if (typeof queryString !== 'object' && node.querySelectorAll(queryString).length > 0)
                 throw new DOMException('node안에 node존재');
 
             node.innerHTML += char;
