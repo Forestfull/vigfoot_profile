@@ -1,2 +1,2 @@
-typeTextIntoNode('#main-header', 'is header');
-typeTextIntoNode('.flex-component-icon > *', 'is section');
+text('#main-header', 'Header');
+text('.flex-component-icon > *', 'is section');

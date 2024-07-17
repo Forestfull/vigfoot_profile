@@ -1,0 +1,51 @@
+const intervalAddr = {};
+const intervalTimeout = 50;
+
+function text(queryString, text) {
+    let i = 0;
+    const nodes = document.querySelectorAll(queryString);
+    const fnTypingChar = (char, address) => setTimeout(() => {
+        nodes.forEach(node => {
+            if (node.querySelectorAll(queryString).length > 0)
+                throw new DOMException('node안에 node존재');
+
+            node.innerHTML += char;
+            clearInterval(address);
+            delete intervalAddr[address];
+        });
+
+        if (i < text.length) {
+            let addr = Number(new Date());
+            intervalAddr[addr] = fnTypingChar(text.charAt(i++), addr);
+        }
+    }, intervalTimeout);
+
+    fnTypingChar(text.charAt(i++));
+}
+
+const loading = {
+    addr: null,
+    idx: 0,
+    headerLogo: document.getElementById('main-logo'),
+    headerHTML: '<img src="/icon.png" alt="vigfoot" style="width: 5rem;">',
+    char: ['/', '-', '\\', '|'],
+    onLogo: () => {
+        loading.addr = setInterval(() => {
+            if (loading.idx >= loading.char.length) loading.idx = 0;
+
+            loading.headerLogo.innerHTML = loading.char[loading.idx++];
+
+        }, intervalTimeout);
+    },
+    clear: () => {
+        clearInterval(loading.addr);
+        loading.addr = null;
+        loading.headerLogo.innerHTML = loading.headerHTML;
+    }
+}
+
+loading.onLogo();
+
+window.onload = () => {
+    loading.clear();
+}
