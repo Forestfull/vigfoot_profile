@@ -35,7 +35,7 @@
     height: 100%;
 }
 
-#main-logo {
+#main-logo, #main-logo > * {
     width: 5rem;
 }
 
