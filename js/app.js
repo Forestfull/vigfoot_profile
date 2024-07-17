@@ -1,4 +1,4 @@
-text('#main-header', 'Header');
+text('#main-header > h1', 'Header');
 text('.flex-component-icon > *', 'is section');
 (() => {
     document.querySelectorAll('.nav-list > li > a')
