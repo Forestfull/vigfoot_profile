@@ -1,7 +1,7 @@
 const intervalAddr = {};
 const intervalTimeout = 50;
 
-function text(queryString, text) {
+function text(queryString, text, interval, callback) {
     if (text === '' || text === null || text === undefined) return;
 
     let i = 0;
@@ -19,10 +19,14 @@ function text(queryString, text) {
         if (i < text.length) {
             let addr = Number(new Date());
             intervalAddr[addr] = fnTypingChar(text.charAt(i++), addr);
+        } else if (i === text.length && callback !== null && callback !== undefined){
+            callback();
         }
-    }, intervalTimeout);
+
+    }, interval === undefined || interval === null ? intervalTimeout : interval);
 
     fnTypingChar(text.charAt(i++));
+
 }
 
 const loading = {
