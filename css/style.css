@@ -9,7 +9,7 @@
     height: 5rem;
 }
 
-#main-header > h1{
+#main-header > h1 {
     display: inline;
     background: linear-gradient(transparent 70%, white 30%);
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
@@ -39,10 +39,6 @@
 
 #main-nav > * {
     margin: 0 auto;
-}
-
-#main-section {
-    margin: 0 5px;
 }
 
 .flex-component-icon {
@@ -76,4 +72,22 @@
 .nav-list > li > a > img {
     width: 32px;
     height: 32px;
+}
+
+#main-section {
+    margin: 5px;
+}
+
+#main-section > article {
+    margin: 2rem;
+}
+
+#main-section > article > fieldset > legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#summary-comp {
+    margin: 3rem 1rem;
+    text-align: center;
 }

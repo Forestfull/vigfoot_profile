@@ -18,6 +18,7 @@ html {
     word-break: break-word;
     box-sizing: border-box;
     max-width: 900px;
+    scroll-behavior: smooth;
 }
 
 a {

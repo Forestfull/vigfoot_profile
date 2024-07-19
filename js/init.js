@@ -2,6 +2,8 @@ const intervalAddr = {};
 const intervalTimeout = 50;
 
 function text(queryString, text) {
+    if (text === '' || text === null || text === undefined) return;
+
     let i = 0;
     const nodes = typeof queryString === 'object' ? [queryString] : document.querySelectorAll(queryString);
     const fnTypingChar = (char, address) => setTimeout(() => {
