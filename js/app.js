@@ -8,7 +8,7 @@ text('#main-header > h1', 'Developer Vigfoot');
         .forEach(node => {
             text(node, node.dataset.comp, null, () => {
                 let xhr = new XMLHttpRequest();
-                xhr.open('GET', location.origin + '/vigfoot_profile' + '/fieldset/' + node.parentNode.parentNode.id);
+                xhr.open('GET', location.origin + '/vigfoot_profile' + '/fieldset/' + node.parentNode.parentNode.id + '.html');
                 xhr.onreadystatechange = ev => {
                     if (xhr.readyState === 4 && xhr.responseText)
                         text(node.parentNode, xhr.responseText, 1);
