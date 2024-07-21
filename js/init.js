@@ -1,5 +1,6 @@
 const intervalAddr = {};
 const intervalTimeout = 50;
+const singleTagList = ['br', 'hr', 'img', 'input'];
 
 function text(queryString, text, interval, callback) {
     if (text === '' || text === null || text === undefined) return;
