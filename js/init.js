@@ -51,6 +51,8 @@ function text(queryString, text, interval, callback) {
 
             }
 
+            i++;
+
             if (i < text.length) {
                 let addr = Number(new Date());
                 intervalAddr[addr] = fnTypingChar(text.charAt(i), addr);
@@ -60,7 +62,6 @@ function text(queryString, text, interval, callback) {
 
             }
 
-            i++;
 
         }, interval === undefined || interval === null ? intervalTimeout : interval);
     }
