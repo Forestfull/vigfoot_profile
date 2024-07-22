@@ -33,9 +33,13 @@ function text(queryString, text, interval, callback) {
                     startTag.name = startTag.str.substring(1, startTag.endIdx - i);
                 }
                 if (isSingleTag(startTag.name)) {
-                    i += startTag.str.length + 1;
                     nodes.forEach(node => node.innerHTML += startTag.str);
+                    i += startTag.str.length - 1;
 
+                } else {
+                    const endTagIdx = text.indexOf('</' + startTag.name, startTag.endIdx + 1);
+                    nodes.forEach(node => node.innerHTML += text.substring(i, endTagIdx));
+                    i = endTagIdx + '</'.length + startTag.name.length;
                 }
                 console.log(startTag)
 
