@@ -23,7 +23,7 @@ function text(queryString, text, interval, callback) {
                 const startTag = {};
                 startTag.endIdx = text.indexOf('>', i);
                 startTag.str = text.substring(i, startTag.endIdx + 1);
-                startTag.splitIdx = startTag.str.substring(i, startTag.endIdx).indexOf(' ');
+                startTag.splitIdx = text.substring(i, startTag.endIdx).indexOf(' ');
 
                 if (startTag.splitIdx !== -1) {
                     startTag.name = startTag.str.substring(1, startTag.splitIdx);
@@ -32,9 +32,10 @@ function text(queryString, text, interval, callback) {
                 } else {
                     startTag.name = startTag.str.substring(1, startTag.endIdx - i);
                 }
+
                 if (isSingleTag(startTag.name)) {
                     nodes.forEach(node => node.innerHTML += startTag.str);
-                    i += startTag.str.length - 1;
+                    i += startTag.str.length;
 
                 } else {
                     const endTagIdx = text.indexOf('</' + startTag.name, startTag.endIdx + 1);
