@@ -16,7 +16,7 @@ text('#main-header > h1', 'Developer Vigfoot');
     }
 
     function getUrl(htmlName) {
-        return location.origin + '/vigfoot_profile/component/' + htmlName + '.html';
+        return location.origin + '/component/' + htmlName + '.html';
     }
 
     fnWriteHtmlComponent(document.querySelector('#summary-comp'), 'summary-comp');
