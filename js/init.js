@@ -35,7 +35,7 @@ function text(queryString, text, interval, callback) {
 
                 if (isSingleTag(startTag.name)) {
                     nodes.forEach(node => node.innerHTML += startTag.str);
-                    i += startTag.str.length;
+                    i += startTag.str.length - 1;
 
                 } else {
                     const endTagIdx = text.indexOf('</' + startTag.name, startTag.endIdx + 1);
