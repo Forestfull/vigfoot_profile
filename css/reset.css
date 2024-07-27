@@ -23,7 +23,7 @@ html {
 
 @media (max-width: 900px) {
     * {
-        max-width: 100%;
+        max-width: 85vw;
     }
 }
 

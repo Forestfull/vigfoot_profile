@@ -1,15 +1,10 @@
 #main-header {
-    text-align: center;
-    margin: 0;
-    padding: 1rem;
-    position: fixed;
+    position: absolute;
     top: 0;
-    height: 5rem;
-}
-
-#main-header > h1 {
-    display: inline;
-    margin-left: 1rem;
+    left: 5rem;
+    margin: 1rem;
+    padding: 0;
+    width: 85vw;
     background: linear-gradient(transparent 70%, white 30%);
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     font-weight: bold;
