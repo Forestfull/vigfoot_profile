@@ -1,10 +1,12 @@
 #main-header {
+    display: inline-block;
     position: absolute;
     top: 0;
     left: 5rem;
     margin: 1rem;
     padding: 0;
-    width: 85vw;
+    width: 100%;
+    max-width: 20rem;
     background: linear-gradient(transparent 70%, white 30%);
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     font-weight: bold;
