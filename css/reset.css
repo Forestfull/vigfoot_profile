@@ -21,6 +21,12 @@ html {
     scroll-behavior: smooth;
 }
 
+@media (max-width: 900px) {
+    * {
+        max-width: 100%;
+    }
+}
+
 a {
     color: aqua;
     text-decoration: none;
