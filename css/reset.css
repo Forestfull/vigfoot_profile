@@ -40,3 +40,7 @@ ul {
 ul > li {
     display: block;
 }
+
+blockquote:before {
+    content: "-> ";
+}
