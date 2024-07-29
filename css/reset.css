@@ -2,7 +2,7 @@
 
 html {
     padding: 0 !important;
-    margin: 5rem 0 5rem 5rem !important;
+    margin: 5rem 0 0 5rem;
     width: 100%;
 }
 
@@ -23,7 +23,11 @@ html {
 
 @media (max-width: 900px) {
     * {
-        max-width: 80vw;
+        max-width: 100% !important;
+    }
+
+    html {
+        margin: 5rem 0 0 0 !important;
     }
 }
 
@@ -39,6 +43,11 @@ ul {
 
 ul > li {
     display: block;
+}
+
+blockquote {
+    margin-inline-end: 0 !important;
+
 }
 
 blockquote:before {

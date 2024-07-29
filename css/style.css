@@ -1,4 +1,4 @@
-#main-header{
+#main-header {
     position: absolute;
     top: 0;
     left: 6rem;
@@ -18,12 +18,12 @@
 
 #main-nav {
     width: 5rem;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
 #main-logo {
@@ -67,16 +67,27 @@
 }
 
 .nav-list > li > a > img {
+    margin: 0 auto;
+    display: block;
     width: 32px;
     height: 32px;
 }
 
 #main-section {
     margin: 5px;
+    background-image: url("/img/background.gif");
+    background-size: cover;
+}
+
+#main-section * {
+    background: rgba(0, 0, 0, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #main-section > article {
     margin: 1rem 0;
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 #main-section > article > fieldset {
@@ -105,4 +116,31 @@
 #summary-comp {
     margin: 3rem 1rem;
     text-align: center;
+}
+
+@media (max-width: 900px) {
+    #main-header {
+        position: static;
+        top: 5rem;
+        left: 0;
+    }
+
+    #main-header > h1 {
+        display: block;
+        text-align: center;
+    }
+
+    #main-nav {
+        width: 100%;
+        height: inherit;
+        flex-direction: row;
+    }
+
+    .nav-list {
+        display: flex;
+    }
+
+    .nav-list > li {
+        margin: 0.5rem;
+    }
 }
