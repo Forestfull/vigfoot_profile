@@ -95,6 +95,11 @@ const loading = {
     }
 }
 
+function fnCopyToClipboard(node) {
+    navigator.clipboard.writeText(node.innerHTML);
+    alert('Copy Completed\n' + node.innerHTML);
+}
+
 loading.onLogo();
 
 window.onload = () => {
