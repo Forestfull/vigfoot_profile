@@ -95,7 +95,13 @@
     animation: width-0-to-100 1s;
 }
 
-.ani-width-0-to-100
+.width-100 {
+    width: 100% !important;
+}
+
+.ani-width-0-to-100{
+    animation: width-0-to-100 1s;
+}
 
 @keyframes width-0-to-100 {
     from {
