@@ -17,6 +17,7 @@
 }
 
 #main-nav {
+    background: #37435d;
     width: 5rem;
     height: 100%;
     position: fixed;
@@ -98,7 +99,7 @@
     width: 100% !important;
 }
 
-.ani-width-0-to-100{
+.ani-width-0-to-100 {
     animation: width-0-to-100 1s;
 }
 
