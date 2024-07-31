@@ -7,7 +7,7 @@ const singleTagSet = new Set()
     .add('input');
 
 function getUrl(htmlName) {
-    return location.origin + '/vigfoot_profile/component/' + htmlName + '.html';
+    return location.origin + '/component/' + htmlName + '.html';
 }
 
 function fnWriteHtmlComponent(node, componentId) {
