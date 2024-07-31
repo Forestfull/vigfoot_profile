@@ -81,7 +81,6 @@
 
 #main-section * {
     background: rgba(0, 0, 0, 0);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #main-section > article {
