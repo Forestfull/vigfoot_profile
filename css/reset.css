@@ -4,6 +4,7 @@ html {
     padding: 0 !important;
     margin: 5rem 0 0 5rem;
     width: 100%;
+    background: #37435d;
 }
 
 @font-face {
@@ -13,7 +14,6 @@ html {
 
 * {
     font-family: dungGeunMo, monospace !important;
-    background: #37435d;
     color: white;
     word-break: break-word;
     box-sizing: border-box;
