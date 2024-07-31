@@ -103,17 +103,6 @@
     animation: width-0-to-100 1s;
 }
 
-@keyframes width-0-to-100 {
-    from {
-        margin: 0 auto;
-        width: 0;
-    }
-    to {
-        margin: 0 auto;
-        width: 99%;
-    }
-}
-
 #main-section > article > fieldset > legend {
     font-size: 1.5rem;
     font-weight: bold;
@@ -122,6 +111,33 @@
 #summary-comp {
     margin: 3rem 1rem;
     text-align: center;
+}
+
+#main-popup-background {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 100vw;
+    width: 100%;
+    height: 100%;
+}
+
+#main-popup {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    border: 1px solid white;
+    margin: 5vh auto;
+    max-width: 80vw;
+    max-height: 80vh;
+    width: 100%;
+    height: 100%;
+    animation: width-0-to-100 500ms;
+}
+
+.display-none {
+    display: none !important;
+    z-index: -1;
 }
 
 @media (max-width: 900px) {
@@ -148,5 +164,18 @@
 
     .nav-list > li {
         margin: 0.5rem;
+    }
+}
+
+@keyframes width-0-to-100 {
+    0% {
+        margin: 40vh auto;
+        width: 0;
+        height: 10px;
+    }
+    100% {
+        margin: 40vh auto;
+        width: 99%;
+        height: 10px;
     }
 }

@@ -6,6 +6,21 @@ const singleTagSet = new Set()
     .add('img')
     .add('input');
 
+function getUrl(htmlName) {
+    return location.origin + '/component/' + htmlName + '.html';
+}
+
+function fnWriteHtmlComponent(node, componentId) {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', getUrl(componentId));
+    xhr.onreadystatechange = ev => {
+        if (xhr.readyState === 4 && xhr.responseText)
+            text(node, xhr.responseText, 1);
+    }
+    xhr.send();
+}
+
+
 function text(queryString, text, interval, callback) {
     if (text === '' || text === null || text === undefined) return;
 
@@ -42,7 +57,6 @@ function text(queryString, text, interval, callback) {
                     nodes.forEach(node => node.innerHTML += text.substring(i, endTagIdx));
                     i = endTagIdx + '</'.length + startTag.name.length;
                 }
-                console.log(startTag)
 
             } else {
                 nodes.forEach(node => {
