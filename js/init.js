@@ -18,7 +18,7 @@ function fnWriteHtmlComponent(node, url, callback) {
     xhr.onreadystatechange = ev => {
         if (xhr.readyState === 4 && xhr.responseText) {
             text(node, xhr.responseText, 1);
-            callback();
+            if (callback !== undefined) callback();
         }
     }
     xhr.send();
