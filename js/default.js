@@ -2,8 +2,7 @@ const mainPopup = document.getElementById('main-popup'),
     mainPopupBackground = document.getElementById('main-popup-background');
 
 mainPopupBackground.addEventListener('click', e => {
-    e.preventDefault();
-    if (e.target.id === mainPopup.id) return;
+    if (e.target.id !== mainPopupBackground.id) return;
 
     mainPopup.innerHTML = '';
     e.target.classList.add('display-none');
