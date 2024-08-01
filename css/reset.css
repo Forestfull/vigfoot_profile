@@ -23,6 +23,10 @@ html {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+img {
+    width: 100%;
+}
+
 @media (max-width: 900px) {
     * {
         max-width: 100% !important;
