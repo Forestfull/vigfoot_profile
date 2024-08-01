@@ -134,6 +134,7 @@
     height: 100%;
     animation: width-0-to-100 500ms;
     padding: 1vw;
+    overflow: auto;
 }
 
 .display-none {
