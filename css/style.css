@@ -173,10 +173,12 @@
         margin: 40vh auto;
         width: 0;
         height: 10px;
+        content-visibility: hidden;
     }
     100% {
         margin: 40vh auto;
         width: 99%;
         height: 10px;
+        content-visibility: hidden;
     }
 }
