@@ -1,6 +1,8 @@
 const intervalAddr = {};
 const intervalTimeout = 50;
 const singleTagSet = new Set()
+    .add('meta')
+    .add('link')
     .add('br')
     .add('hr')
     .add('img')
@@ -10,16 +12,17 @@ function getUrl(htmlName) {
     return location.origin + '/component/' + htmlName + '.html';
 }
 
-function fnWriteHtmlComponent(node, componentId) {
+function fnWriteHtmlComponent(node, url, callback) {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', getUrl(componentId));
+    xhr.open('GET', url);
     xhr.onreadystatechange = ev => {
-        if (xhr.readyState === 4 && xhr.responseText)
+        if (xhr.readyState === 4 && xhr.responseText) {
             text(node, xhr.responseText, 1);
+            callback();
+        }
     }
     xhr.send();
 }
-
 
 function text(queryString, text, interval, callback) {
     if (text === '' || text === null || text === undefined) return;

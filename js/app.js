@@ -5,8 +5,8 @@ text('#main-header > h1', 'Developer Vigfoot');
             text(node, node.querySelector('img').getAttribute('alt'));
         });
 
-    fnWriteHtmlComponent(document.querySelector('#summary-comp'), 'summary-comp');
+    fnWriteHtmlComponent(document.querySelector('#summary-comp'), getUrl('summary-comp'));
 
     document.querySelectorAll('#main-section > article > fieldset > legend')
-        .forEach(node => text(node, node.dataset.comp, null, () => fnWriteHtmlComponent(node.parentNode, node.parentNode.parentNode.id)));
+        .forEach(node => text(node, node.dataset.comp, null, () => fnWriteHtmlComponent(node.parentNode, getUrl(node.parentNode.parentNode.id))));
 })();
