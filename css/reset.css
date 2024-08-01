@@ -11,6 +11,9 @@ html {
     font-family: dungGeunMo;
     src: url("/font/DungGeunMo.ttf") format("truetype");
 }
+img {
+    max-width: 100%;
+}
 
 * {
     font-family: dungGeunMo, monospace !important;
@@ -23,9 +26,6 @@ html {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-img {
-    width: 100%;
-}
 
 @media (max-width: 900px) {
     * {
