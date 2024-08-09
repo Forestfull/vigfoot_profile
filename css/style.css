@@ -75,7 +75,7 @@
 }
 
 #main-section {
-    margin: 5px;
+    padding: 5px;
     background-image: url("/img/background.gif");
     height: 85vh;
 }

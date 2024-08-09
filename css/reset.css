@@ -2,7 +2,7 @@
 
 html {
     padding: 0 !important;
-    margin: 5rem 0 0 5rem;
+    margin-top: 5rem;
     width: 100%;
     background: #37435d;
 }
@@ -21,7 +21,7 @@ img {
     color: white;
     word-break: break-word;
     box-sizing: border-box;
-    max-width: 90vw;
+    max-width: 100%;
     scroll-behavior: smooth;
     transition: all 100ms;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
