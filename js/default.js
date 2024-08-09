@@ -10,7 +10,7 @@ function openPopup(url) {
 mainPopupBackground.addEventListener('click', e => {
     if (e.target.id !== mainPopupBackground.id) return;
 
-    mainPopupContents.innerHTML = '';
+    mainPopupContents.innerHTML = '<legend></legend>';
     e.target.classList.add('display-none');
 });
 
@@ -18,7 +18,8 @@ document.querySelectorAll('#nav-list > li > a')
     .forEach(node => {
         node.addEventListener('click', e => {
             const urlName = node.querySelector('img').getAttribute('alt');
+            mainPopupContents.querySelector('legend').innerHTML = urlName;
             mainPopupBackground.classList.remove('display-none');
-            fnWriteHtmlComponent(mainPopupContents, getUrl(urlName)?.toLowerCase())
+            fnWriteHtmlComponent(mainPopupContents, getUrl(urlName)?.toLowerCase());
         });
     });
