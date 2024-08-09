@@ -135,6 +135,10 @@
     overflow: auto;
 }
 
+#main-popup * {
+    max-width: 100%;
+}
+
 #main-popup > fieldset {
     max-width: 100%;
     min-height: 100%;
