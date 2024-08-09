@@ -74,9 +74,7 @@
 }
 
 #main-section {
-    padding: 5px;
-    background-image: url("/img/background.gif");
-    height: 85vh;
+    padding: 10px;
 }
 
 #main-section * {

@@ -4,7 +4,11 @@ html {
     padding: 0 !important;
     margin-top: 5rem;
     width: 100%;
-    background: #37435d;
+    background-image: url("/img/background.gif");
+}
+
+body {
+    margin: 0;
 }
 
 @font-face {
