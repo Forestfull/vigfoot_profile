@@ -11,6 +11,7 @@ html {
     font-family: dungGeunMo;
     src: url("/font/DungGeunMo.ttf") format("truetype");
 }
+
 img {
     max-width: 100%;
 }
@@ -26,6 +27,21 @@ img {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+*::-webkit-scrollbar {
+    display: block;
+    overflow: auto;
+    padding: 1rem;
+    margin: 1rem auto;
+    outline: none;
+    width: 5px;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 1);
+}
 
 @media (max-width: 900px) {
     * {
