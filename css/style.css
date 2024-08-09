@@ -84,28 +84,12 @@
     background: rgba(0, 0, 0, 0);
 }
 
-#main-section > article {
-    margin: 1rem 0;
-    padding: 1rem 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-#main-section > article > fieldset {
-    margin: 0 5px;
-    animation: width-0-to-100 1s;
-}
-
 .width-100 {
     width: 100% !important;
 }
 
 .ani-width-0-to-100 {
     animation: width-0-to-100 1s;
-}
-
-#main-section > article > fieldset > legend {
-    font-size: 1.5rem;
-    font-weight: bold;
 }
 
 #summary {
