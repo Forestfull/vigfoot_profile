@@ -36,7 +36,7 @@ function text(queryString, text, interval, callback) {
 
     function fnTypingChar(char, address) {
         return setTimeout(() => {
-            if (text.charAt(i) === '<') {
+            if (text.charAt(i) === '<' && text.charAt(i + 1) !== '/') {
                 const startTag = {};
                 startTag.endIdx = text.indexOf('>', i);
                 startTag.str = text.substring(i, startTag.endIdx + 1);
@@ -55,9 +55,16 @@ function text(queryString, text, interval, callback) {
                     i += startTag.str.length - 1;
 
                 } else {
-                    const endTagIdx = text.indexOf('</' + startTag.name, startTag.endIdx + 1);
+                    let endTagIdx = text.indexOf('</' + startTag.name, startTag.endIdx + 1);
+                    let strContents = text.substring(i + startTag.str.length, endTagIdx);
+                    while (strContents.match('<' + startTag.name)?.length !== strContents.match('</' + startTag.name)?.length) {
+                        strContents = text.substring(i + startTag.str.length, endTagIdx);
+                        endTagIdx += text.substring(endTagIdx + 1).indexOf('</' + startTag.name) + 1;
+                    }
+
                     nodes.forEach(node => node.innerHTML += text.substring(i, endTagIdx));
-                    i = endTagIdx + '</'.length + startTag.name.length;
+                    i = endTagIdx + '</'.length + startTag.name.length + 1;
+                    console.log(text.substring(0, i))
                 }
 
             } else {
@@ -69,7 +76,6 @@ function text(queryString, text, interval, callback) {
                     clearInterval(address);
                     delete intervalAddr[address];
                 });
-
             }
 
             i++;
