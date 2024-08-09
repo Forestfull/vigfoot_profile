@@ -5,5 +5,7 @@ text('#main-header > h1', 'Developer Vigfoot');
             text(node, node.querySelector('img').getAttribute('alt'));
         });
 
-    fnWriteHtmlComponent(document.getElementById('summary'), getUrl('summary'));
+    fnWriteHtmlComponent(getUrl('summary'), res => {
+        text(document.getElementById('summary'), res, 1)
+    });
 })();

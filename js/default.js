@@ -3,8 +3,10 @@ const mainPopup = document.getElementById('main-popup'),
     mainPopupBackground = document.getElementById('main-popup-background');
 
 function openPopup(url) {
-    fnWriteHtmlComponent(mainPopupContents, url
-        , () => mainPopupBackground.classList.remove('display-none'));
+    fnWriteHtmlComponent(url, res => {
+        text(mainPopupContents, res, 1)
+        mainPopupBackground.classList.remove('display-none')
+    });
 }
 
 mainPopupBackground.addEventListener('click', e => {
@@ -20,6 +22,11 @@ document.querySelectorAll('#nav-list > li > a')
             const urlName = node.querySelector('img').getAttribute('alt');
             mainPopupContents.querySelector('legend').innerHTML = urlName;
             mainPopupBackground.classList.remove('display-none');
-            fnWriteHtmlComponent(mainPopupContents, getUrl(urlName)?.toLowerCase());
+            fnWriteHtmlComponent(getUrl(urlName)?.toLowerCase(), res => text(mainPopupContents, res, 1));
         });
+    });
+
+fnWriteHtmlComponent('/project/config.json'
+    , res => {
+        text(document.getElementById('icon-wrap'), res)
     });

@@ -1,5 +1,5 @@
 const intervalAddr = {};
-const intervalTimeout = 50;
+const intervalTimeout = 10;
 const singleTagSet = new Set()
     .add('meta')
     .add('link')
@@ -12,13 +12,12 @@ function getUrl(htmlName) {
     return location.origin + '/component/' + htmlName + '.html';
 }
 
-function fnWriteHtmlComponent(node, url, callback) {
+function fnWriteHtmlComponent(url, callback) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.onreadystatechange = ev => {
         if (xhr.readyState === 4 && xhr.responseText) {
-            text(node, xhr.responseText, 1);
-            if (callback !== undefined) callback();
+            if (callback !== undefined) callback(xhr.responseText)
         }
     }
     xhr.send();
