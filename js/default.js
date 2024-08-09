@@ -34,7 +34,7 @@ fnWriteHtmlComponent('/project/config.json'
             iconTitle.innerText = node.name;
             iconContainer.addEventListener('click', e => {
                 fnWriteHtmlComponent(node.index, html => {
-                    mainPopupContents.querySelector('legend').innerHTML = node.title;
+                    mainPopupContents.querySelector('legend').innerHTML = node.name;
                     mainPopupBackground.classList.remove('display-none');
                     text(mainPopupContents, html, 1);
                 });
