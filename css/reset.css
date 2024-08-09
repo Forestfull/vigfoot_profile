@@ -2,10 +2,10 @@
 
 html {
     padding: 0 !important;
-    margin-top: 5rem;
     width: 100%;
     background-image: url("/img/background.gif");
     background-size: contain;
+    background-repeat: repeat-x;
 }
 
 body {
@@ -53,7 +53,7 @@ img {
     }
 
     html {
-        margin: 5rem 0 0 0 !important;
+        margin: 0 !important;
     }
 }
 
