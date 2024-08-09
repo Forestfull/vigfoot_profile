@@ -90,6 +90,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    border-radius: 5px;
 }
 
 .width-100 {
