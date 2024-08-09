@@ -3,13 +3,14 @@
 html {
     padding: 0 !important;
     width: 100%;
-    background-image: url("/img/background.gif");
-    background-size: contain;
-    background-repeat: repeat-x;
+    background: black;
 }
 
 body {
     margin: 0;
+    background-image: url("/img/background.gif");
+    background-size: contain;
+    background-repeat: repeat-x;
 }
 
 @font-face {
