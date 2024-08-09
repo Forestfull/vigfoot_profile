@@ -48,10 +48,6 @@ img {
 }
 
 @media (max-width: 900px) {
-    * {
-        max-width: 100% !important;
-    }
-
     html {
         padding-top: 5rem !important;
     }

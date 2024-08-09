@@ -127,7 +127,11 @@
     overflow: auto;
 }
 
-#main-popup * {
+#main-popup img {
+    max-width: 60vw;
+}
+
+#main-popup *:NOT(img) {
     max-width: 100%;
 }
 
@@ -180,6 +184,10 @@
 
     #icon-wrap {
         margin: 1vw;
+    }
+
+    #main-popup {
+        max-width: 100% !important;
     }
 }
 
