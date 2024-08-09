@@ -2,13 +2,6 @@ const mainPopup = document.getElementById('main-popup'),
     mainPopupContents = mainPopup.querySelector('fieldset'),
     mainPopupBackground = document.getElementById('main-popup-background');
 
-function openPopup(url) {
-    fnWriteHtmlComponent(url, res => {
-        text(mainPopupContents, res, 1)
-        mainPopupBackground.classList.remove('display-none')
-    });
-}
-
 mainPopupBackground.addEventListener('click', e => {
     if (e.target.id !== mainPopupBackground.id) return;
 
@@ -28,5 +21,28 @@ document.querySelectorAll('#nav-list > li > a')
 
 fnWriteHtmlComponent('/project/config.json'
     , res => {
-        text(document.getElementById('icon-wrap'), res)
+        let dataList = JSON.parse(res)?.data;
+
+        dataList.forEach(node => {
+            const iconContainer = document.createElement('div');
+            const iconImg = document.createElement("img");
+            const iconTitle = document.createElement('p');
+            iconContainer.appendChild(iconImg);
+            iconContainer.appendChild(iconTitle);
+            iconImg.setAttribute('src', node.icon);
+
+            iconTitle.innerText = node.name;
+            iconContainer.addEventListener('click', e => {
+                fnWriteHtmlComponent(node.index, html => {
+                    mainPopupContents.querySelector('legend').innerHTML = node.title;
+                    mainPopupBackground.classList.remove('display-none');
+                    text(mainPopupContents, html, 1);
+                });
+            });
+            iconContainer.style.textAlign = 'center';
+            iconContainer.style.cursor = 'pointer';
+            iconImg.style.width = '50px';
+            iconImg.style.height = '50px';
+            document.getElementById('icon-wrap').appendChild(iconContainer);
+        });
     });

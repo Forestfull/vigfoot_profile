@@ -81,6 +81,15 @@
     background: rgba(0, 0, 0, 0);
 }
 
+#icon-wrap {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 5vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .width-100 {
     width: 100% !important;
 }
@@ -165,6 +174,10 @@
 
     #nav-list > li {
         margin: 0.5rem;
+    }
+
+    #icon-wrap {
+        margin: 1vw;
     }
 }
 
