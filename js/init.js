@@ -63,8 +63,7 @@ function text(queryString, text, interval, callback) {
                     }
 
                     nodes.forEach(node => node.innerHTML += text.substring(i, endTagIdx));
-                    i = endTagIdx + '</'.length + startTag.name.length + 1;
-                    console.log(text.substring(0, i))
+                    i = endTagIdx + '</'.length + startTag.name.length;
                 }
 
             } else {
