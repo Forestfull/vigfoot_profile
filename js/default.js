@@ -4,15 +4,15 @@ const mainPopup = document.getElementById('main-popup'),
 
 mainPopupBackground.addEventListener('click', e => {
     if (e.target.id !== mainPopupBackground.id) return;
-
-    mainPopupContents.innerHTML = '<legend></legend>';
-    e.target.classList.add('display-none');
+    window.history.back();
 });
 
 document.querySelectorAll('#nav-list > li > a')
     .forEach(node => {
         node.addEventListener('click', e => {
             const urlName = node.querySelector('img').getAttribute('alt');
+            const title = node.querySelector('p').innerText;
+            window.history.pushState(null, null, './' + title);
             mainPopupContents.querySelector('legend').innerHTML = urlName;
             mainPopupBackground.classList.remove('display-none');
             fnWriteHtmlComponent(getUrl(urlName)?.toLowerCase(), res => text(mainPopupContents, res, 1));
@@ -37,6 +37,7 @@ fnWriteHtmlComponent('/project/config.json'
                     mainPopupContents.querySelector('legend').innerHTML = node.name;
                     mainPopupBackground.classList.remove('display-none');
                     text(mainPopupContents, html, 1);
+                    window.history.pushState(null, null, './' + node.name);
                 });
             });
             iconContainer.style.textAlign = 'center';
@@ -46,3 +47,8 @@ fnWriteHtmlComponent('/project/config.json'
             document.getElementById('icon-wrap').appendChild(iconContainer);
         });
     });
+
+window.onpopstate = e => {
+    mainPopupContents.innerHTML = '<legend></legend>';
+    mainPopupBackground.classList.add('display-none');
+}
