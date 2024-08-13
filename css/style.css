@@ -77,15 +77,17 @@
     padding: 10px;
 }
 
-#main-section * {
-    background: rgba(0, 0, 0, 0);
+#main-section > * {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset -1px -1px 10px rgba(255, 255, 255, 0.2), inset 1px -1px 10px rgba(255, 255, 255, 0.2), inset -1px 1px 10px rgba(255, 255, 255, 0.2), inset 1px 1px 10px rgba(255, 255, 255, 0.2);
     font-weight: bold;
 }
 
 #icon-wrap {
     background: rgba(0, 0, 0, 0.2);
     box-shadow: inset -1px -1px 10px rgba(255, 255, 255, 0.2), inset 1px -1px 10px rgba(255, 255, 255, 0.2), inset -1px 1px 10px rgba(255, 255, 255, 0.2), inset 1px 1px 10px rgba(255, 255, 255, 0.2);
-    padding: 10px;
+    padding: 1vw;
+    min-height: 60vh;
     margin: 5vw;
     display: flex;
     flex-direction: row;
@@ -106,8 +108,9 @@
 }
 
 #summary {
-    padding: 3rem 1rem;
-    text-align: center;
+    margin: 3rem 1rem;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 #main-popup-background {
@@ -124,7 +127,7 @@
     background: rgba(0, 0, 0, 0.9);
     border-radius: 5px;
     border: 1px solid white;
-    margin: 5vh auto;
+    margin: 5rem auto;
     max-width: 80vw;
     height: 80vh;
     animation: width-0-to-100 300ms;
