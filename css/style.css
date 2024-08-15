@@ -20,7 +20,7 @@
     width: 5rem;
     height: 100%;
     position: fixed;
-    background: linear-gradient(270deg, rgba(41, 39, 60, 0.9), rgba(41, 39, 60, 0.7));
+    background: linear-gradient(270deg, rgba(var(--vigfoot-background-color), 0.9), rgba(var(--vigfoot-background-color), 0.5));
     top: 0;
     left: 0;
     display: flex;
@@ -85,13 +85,13 @@
 }
 
 #main-section > article {
-    background: rgba(41, 39, 60, 0.9);
+    background: rgba(var(--vigfoot-background-color), 0.9);
     font-weight: bold;
     margin: 20px auto;
 }
 
 #main-section > section {
-    background: rgba(20, 20, 20, 1);
+    background: rgba(var(--vigfoot-background-color), 1);
     min-height: 30vh;
     animation: width-0-to-100 1s;
 }
@@ -128,7 +128,7 @@
     height: 100%;
 }
 
-.main-popup-help{
+.main-popup-help {
     width: 100%;
     font-size: 2rem;
     min-height: 2rem;
@@ -138,7 +138,7 @@
 }
 
 #main-popup {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(var(--vigfoot-background-color), 0.9);
     border-radius: 5px;
     border: 1px solid white;
     margin: 1rem auto;
@@ -157,7 +157,8 @@
 #main-popup > fieldset {
     max-width: 100%;
     min-height: 100%;
-    padding: 10px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
 }
 
 #main-popup > fieldset > legend {

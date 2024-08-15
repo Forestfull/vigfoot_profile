@@ -30,10 +30,7 @@ document.querySelectorAll('#nav-list > li > a')
         let title = node.querySelector('img').getAttribute('alt');
         node.innerHTML += '<p>' + title + '</p>';
 
-        if (title === 'Share') {
-            return;
-
-        } else {
+        if (title !== 'Share') {
             node.addEventListener('click', e => {
                 const urlName = node.querySelector('img').getAttribute('alt');
                 const title = node.querySelector('p').innerText;
@@ -83,7 +80,7 @@ window.onpopstate = e => {
 }
 
 window.addEventListener('keyup', e => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' || e.key === 'Backspace') {
         mainPopupContents.innerHTML = '<legend></legend>';
         closePopup();
     }
