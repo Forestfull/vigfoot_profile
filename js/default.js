@@ -1,23 +1,16 @@
 const mainPopup = document.getElementById('main-popup'),
     mainPopupContents = mainPopup.querySelector('fieldset'),
     mainPopupBackground = document.getElementById('main-popup-background');
+    mainPopupHelp = document.getElementById('main-popup-help');
 
 mainPopupBackground.addEventListener('click', e => {
     if (e.target.id !== mainPopupBackground.id) return;
     window.history.back();
 });
 
-document.querySelectorAll('#nav-list > li > a')
-    .forEach(node => {
-        node.addEventListener('click', e => {
-            const urlName = node.querySelector('img').getAttribute('alt');
-            const title = node.querySelector('p').innerText;
-            window.history.pushState(null, null, './' + title);
-            mainPopupContents.querySelector('legend').innerHTML = urlName;
-            mainPopupBackground.classList.remove('display-none');
-            fnWriteHtmlComponent(getUrl(urlName)?.toLowerCase(), res => text(mainPopupContents, res, 1));
-        });
-    });
+mainPopupHelp.addEventListener('click', e => {
+    window.history.back();
+});
 
 fnWriteHtmlComponent('/project/config.json'
     , res => {
@@ -51,4 +44,10 @@ fnWriteHtmlComponent('/project/config.json'
 window.onpopstate = e => {
     mainPopupContents.innerHTML = '<legend></legend>';
     mainPopupBackground.classList.add('display-none');
+    window.addEventListener('keyup', e => {
+        if (e.key === 'Escape') {
+            mainPopupContents.innerHTML = '<legend></legend>';
+            mainPopupBackground.classList.add('display-none');
+        }
+    })
 }

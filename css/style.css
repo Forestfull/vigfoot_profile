@@ -74,25 +74,37 @@
 }
 
 #main-section {
-    padding: 10px;
+    padding: 5vw;
 }
 
 #main-section > * {
-    background: rgba(0, 0, 0, 0.2);
     box-shadow: inset -1px -1px 10px rgba(255, 255, 255, 0.2), inset 1px -1px 10px rgba(255, 255, 255, 0.2), inset -1px 1px 10px rgba(255, 255, 255, 0.2), inset 1px 1px 10px rgba(255, 255, 255, 0.2);
+    width: 100%;
+    border-radius: 5px;
+}
+
+#main-section > article {
+    background: rgba(0, 0, 0, 0.2);
     font-weight: bold;
+    margin: 20px auto;
+}
+
+#main-section > section {
+    background: rgba(20, 20, 20, 1);
+    min-height: 30vh;
+    animation: width-0-to-100 1s;
+}
+
+#summary {
+    padding: 1rem 1rem 0 1rem;
+    border-radius: 5px;
 }
 
 #icon-wrap {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inset -1px -1px 10px rgba(255, 255, 255, 0.2), inset 1px -1px 10px rgba(255, 255, 255, 0.2), inset -1px 1px 10px rgba(255, 255, 255, 0.2), inset 1px 1px 10px rgba(255, 255, 255, 0.2);
-    padding: 1vw;
-    min-height: 50vh;
-    margin: 5vw;
+    padding: 0 1rem 1rem 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border-radius: 5px;
 }
 
 #icon-wrap > * {
@@ -105,16 +117,6 @@
     width: 100% !important;
 }
 
-.ani-width-0-to-100 {
-    animation: width-0-to-100 1s;
-}
-
-#summary {
-    margin: 3rem 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-}
-
 #main-popup-background {
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -125,23 +127,28 @@
     height: 100%;
 }
 
+#main-popup-help{
+    width: 100%;
+    font-size: 2rem;
+    min-height: 2rem;
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
 #main-popup {
     background: rgba(0, 0, 0, 0.9);
     border-radius: 5px;
     border: 1px solid white;
-    margin: 5rem auto;
+    margin: 1rem auto;
     max-width: 80vw;
     height: 80vh;
-    animation: width-0-to-100 300ms;
+    animation: width-0-to-100 300ms, floating-content-hidden 300ms;
     padding: 1vw;
     overflow: auto;
 }
 
-#main-popup img {
-    max-width: 60vw;
-}
-
-#main-popup *:NOT(img) {
+#main-popup * {
     max-width: 100%;
 }
 
@@ -203,15 +210,22 @@
 
 @keyframes width-0-to-100 {
     0% {
-        margin: 40vh auto;
         width: 0;
         height: 10px;
+    }
+    100% {
+        width: 99%;
+        height: 10px;
+    }
+}
+
+@keyframes floating-content-hidden {
+    0% {
+        margin: 40vh auto;
         content-visibility: hidden;
     }
     100% {
         margin: 40vh auto;
-        width: 99%;
-        height: 10px;
         content-visibility: hidden;
     }
 }
