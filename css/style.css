@@ -57,7 +57,7 @@
 }
 
 #nav-list > li {
-    margin: 2rem 1rem;
+    margin: 2rem 0.5rem;
     text-align: center;
 }
 
@@ -72,6 +72,10 @@
     display: block;
     width: 32px;
     height: 32px;
+}
+
+#nav-list > li > a > p {
+    margin: 3px;
 }
 
 #main-section {
@@ -199,7 +203,7 @@
     }
 
     #nav-list > li {
-        margin: 0.5rem;
+        margin: auto 0.5rem;
     }
 
     #icon-wrap {
