@@ -26,7 +26,7 @@
         <li><a href="javascript:"><img src="/img/icon/profile.svg" alt="Profile"></a></li>
         <li><a href="javascript:"><img src="/img/icon/stack.svg" alt="Stack"></a></li>
         <li><a href="javascript:"><img src="/img/icon/career.svg" alt="Career"></a></li>
-        <li><a href="javascript:window.navigator.share({title:document.title, url:location.href, text:document.querySelector('head > meta[name=\'description\']')})"><img src="/img/icon/share.svg" alt="Share"></a></li>
+        <li><a href="javascript:window.navigator.share({title:document.title, url:location.href, text:document.querySelector('head > meta[name=\'description\']').getAttribute('content')})"><img src="/img/icon/share.svg" alt="Share"></a></li>
     </ul>
 </nav>
 <section id="main-section">
