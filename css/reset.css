@@ -4,11 +4,12 @@ html {
     padding: 0 !important;
     width: 100%;
     background: black;
+    --vigfoot-background-color: 40, 67, 87;
 }
 
 body {
     margin: 0;
-    background-image: url("/img/background.gif");
+    background-image: url("/img/programmer.gif");
     background-size: contain;
     background-repeat: repeat-x;
 }
