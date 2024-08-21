@@ -11,7 +11,6 @@ function closePopup() {
     for (let background of mainPopupBackground) background.classList.add('display-none');
 }
 
-console.log(mainPopupBackground);
 for (let background of mainPopupBackground) {
     background.addEventListener('click', e => {
         if (!e.target.classList.contains('main-popup-background')) return;
@@ -49,15 +48,16 @@ fnWriteHtmlComponent('/project/config.json'
         let dataList = JSON.parse(res)?.data;
 
         dataList.forEach(node => {
-            const iconContainer = document.createElement('div');
-            const iconImg = document.createElement("img");
-            const iconTitle = document.createElement('p');
-            iconContainer.appendChild(iconImg);
-            iconContainer.appendChild(iconTitle);
-            iconImg.setAttribute('src', node.icon);
+            const projectContainer = document.createElement('div');
+            const projectTitle = document.createElement('h2');
+            const projectExplain = document.createElement('p');
+            projectContainer.classList.add('project-container');
+            projectContainer.appendChild(projectTitle);
+            projectContainer.appendChild(projectExplain);
 
-            iconTitle.innerText = node.name;
-            iconContainer.addEventListener('click', e => {
+            projectTitle.innerText = node.name;
+            projectExplain.innerText = node.explain;
+            projectContainer.addEventListener('click', e => {
                 fnWriteHtmlComponent(node.index, html => {
                     mainPopupContents.querySelector('legend').innerHTML = node.name;
                     openPopup();
@@ -65,11 +65,11 @@ fnWriteHtmlComponent('/project/config.json'
                     window.history.pushState(null, null, './' + node.name);
                 });
             });
-            iconContainer.style.textAlign = 'center';
-            iconContainer.style.cursor = 'pointer';
-            iconImg.style.width = '50px';
-            iconImg.style.height = '50px';
-            document.getElementById('icon-wrap').appendChild(iconContainer);
+            projectContainer.style.background = 'URL("' + node.banner + '")';
+            projectContainer.style.backgroundSize = 'contain';
+            projectTitle.style.fontSize = '60px';
+
+            document.getElementById('icon-wrap').appendChild(projectContainer);
         });
     });
 
