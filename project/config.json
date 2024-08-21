@@ -1,14 +1,16 @@
 {
-  "lastUpdateTime": "2024-08-11",
+  "lastUpdateTime": "2024-08-21",
   "data": [
     {
       "name": "Forest Full",
-      "icon": "/project/forest-full/Forest_Full.svg",
+      "explain": "작업 중",
+      "banner": "/project/forest-full/img/banner.svg",
       "index": "/project/forest-full/index.html"
     },
     {
       "name": "Team SMTP",
-      "icon": "/project/smtp/Team_SMTP.svg",
+      "explain": "비즈메카처럼 관리 가능한 개인 메일 서버",
+      "banner": "/project/smtp/img/banner.svg",
       "index": "/project/smtp/index.html"
     }
   ]
