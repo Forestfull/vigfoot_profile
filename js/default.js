@@ -80,8 +80,8 @@ window.onpopstate = e => {
 }
 
 window.addEventListener('keyup', e => {
-    if (e.key === 'Escape' || e.key === 'Backspace') {
-        if (location.pathname === '/' || location.pathname === 'index.html') return;
-        history.back();
-    }
+    if (e.key !== 'Escape' && e.key !== 'Backspace') return;
+    if (location.pathname === '/' || location.pathname === 'index.html') return;
+
+    history.back();
 });
