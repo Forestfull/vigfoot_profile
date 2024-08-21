@@ -81,7 +81,7 @@ window.onpopstate = e => {
 
 window.addEventListener('keyup', e => {
     if (e.key === 'Escape' || e.key === 'Backspace') {
-        mainPopupContents.innerHTML = '<legend></legend>';
-        closePopup();
+        if (location.pathname === '/' || location.pathname === 'index.html') return;
+        history.back();
     }
 });
