@@ -130,7 +130,7 @@
     transition: 500ms all;
 }
 
-#icon-wrap > .project-container:ACTIVE:HOVER:FOCUS > * {
+#icon-wrap > .project-container:HOVER > * {
     background: transparent;
     color: inherit;
     mix-blend-mode: normal;
