@@ -130,7 +130,7 @@
     transition: 500ms all;
 }
 
-#icon-wrap > .project-container:HOVER > * {
+#icon-wrap > .project-container:ACTIVE > * {
     background: transparent;
     color: inherit;
     mix-blend-mode: normal;
