@@ -9,12 +9,12 @@ html {
 
 body {
     margin: 0;
-    background-image: url("/img/programmer.gif");
+    background-image: url("/deprecated/img/programmer.gif");
 }
 
 @font-face {
     font-family: dungGeunMo;
-    src: url("/font/DungGeunMo.ttf") format("truetype");
+    src: url("/deprecated/font/DungGeunMo.ttf") format("truetype");
 }
 
 img {
