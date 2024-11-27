@@ -81,7 +81,7 @@ window.onpopstate = e => {
 
 window.addEventListener('keyup', e => {
     if (e.key !== 'Escape' && e.key !== 'Backspace') return;
-    if (location.pathname === '/' || location.pathname === 'index.html') return;
+    if (location.pathname === '/' || location.pathname === 'index_legacy.html') return;
 
     history.back();
 });
